@@ -1,0 +1,76 @@
+/* China Survival Chinese · audio site. Same system as the book (v3 "Ride the line"). No external requests. */
+@font-face{font-family:Outfit;font-weight:700;src:url(Outfit-Bold.ttf)}
+@font-face{font-family:Instrument;font-weight:400;src:url(InstrumentSans-Regular.ttf)}
+@font-face{font-family:Instrument;font-weight:700;src:url(InstrumentSans-Bold.ttf)}
+:root{--ink:#171717;--grey:#6F6F6F;--rule:#DCD6CC;--paper:#FBFAF7;--zh:"PingFang SC","Noto Sans SC","Noto Sans CJK SC","Source Han Sans SC","Microsoft YaHei",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:16px/1.45 Instrument,system-ui,sans-serif;max-width:640px;margin:0 auto;padding:0 18px 40px}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:3px solid var(--line);outline-offset:2px;border-radius:6px}
+
+header{padding:22px 0 14px}
+.home{font-size:14px;color:var(--grey);text-decoration:none}
+.home:before{content:"← "}
+.kv{font-family:Outfit;font-weight:700;letter-spacing:.18em;font-size:13px}
+.hd{display:flex;gap:14px;align-items:center;margin-top:14px}
+.badge{width:56px;height:56px;border-radius:19px;background:var(--line);color:var(--badge-ink);font:700 28px/1 Outfit;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+h1{font:700 26px/1.1 Outfit;letter-spacing:-.01em}
+h1.big{font-size:34px;margin-top:10px}
+.zh{font-family:var(--zh);font-weight:500;color:var(--grey);margin-top:2px}
+.intro{color:var(--grey);margin-top:12px;font-size:15px}
+
+.bar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;background:var(--paper);border-bottom:1px solid var(--rule)}
+#all{background:var(--ink);color:var(--paper);border-radius:22px;padding:9px 16px;font-weight:700}
+#all[aria-pressed="true"]{background:var(--line);color:var(--badge-ink)}
+.speed{display:flex;border:1.5px solid var(--ink);border-radius:22px;overflow:hidden}
+.speed button{padding:7px 14px;font-size:14px}
+.speed button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+.stop{position:relative;padding:18px 0 4px 26px}
+.stop:before{content:"";position:absolute;left:8px;top:28px;bottom:-18px;width:5px;border-radius:3px;background:var(--line)}
+.stop:last-of-type:before{bottom:12px}
+.stop h2{font:700 17px/1.2 Outfit;display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+.stop h2 span{position:absolute;left:0;top:18px;width:21px;height:21px;border-radius:50%;background:var(--paper);border:4px solid var(--line);font-size:0}
+.stop h2 small{font-family:var(--zh);font-weight:500;font-size:13px;color:var(--grey)}
+.extra{margin-top:26px;border-top:1px solid var(--rule);padding-top:14px}
+.extra h2{font:700 17px Outfit;margin-bottom:6px}
+ol{list-style:none}
+
+.ln{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #EEE9E1}
+.ln .tx{flex:1;min-width:0}
+.ln.them .tx{padding-left:12px;border-left:2px solid #BDB6AA}
+.play{flex:0 0 auto;width:40px;height:40px;border-radius:50%;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;margin-top:6px}
+.play span{width:0;height:0;border-left:11px solid var(--ink);border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+.ln.on .play{background:var(--line);border-color:var(--line)}
+.ln.on .play span{border-left-color:var(--badge-ink)}
+.ln.miss .play{opacity:.35}
+.en{font-size:15px;margin-top:2px}
+.en small{display:block;font-size:12px;color:var(--grey)}
+.small .ln,.words .ln{padding:7px 0}
+.words{display:grid;grid-template-columns:1fr 1fr;column-gap:14px}
+.words .play,.small .play{width:32px;height:32px;margin-top:4px}
+
+/* ruby cells, same markup as the book */
+.rb{display:flex;flex-wrap:wrap;row-gap:4px}
+.rb .seg{display:flex;flex-wrap:wrap}
+.wd{display:inline-flex}
+.c{display:inline-flex;flex-direction:column;align-items:center;min-width:1.45em}
+.c i{font-style:normal;font-size:12px;line-height:1.2;white-space:nowrap}
+.c b{font-family:var(--zh);font-weight:500;font-size:24px;line-height:1.25}
+.c.p{min-width:.9em}
+.words .c b,.small .c b{font-size:20px}
+
+.dl{margin-top:22px;font-size:15px}
+.toc li{border-bottom:1px solid var(--rule)}
+.toc a{display:flex;align-items:center;gap:12px;padding:12px 0;text-decoration:none}
+.toc .mini{width:34px;height:34px;border-radius:12px;font:700 16px Outfit;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.toc b{font-family:Outfit}
+.toc small{font-family:var(--zh);color:var(--grey);margin-left:auto}
+.pn{display:flex;justify-content:space-between;margin-top:26px;font-weight:700}
+.pn .nx{margin-left:auto}
+footer{margin-top:34px;padding-top:14px;border-top:1px solid var(--rule);font-size:13px;color:var(--grey)}
+footer p+p{margin-top:8px}
+footer .brand{font:700 12px Outfit;letter-spacing:.14em;color:var(--ink)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
